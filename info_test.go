@@ -1,9 +1,7 @@
-package coinpayments_test
+package coinpayments
 
 import (
 	"testing"
-
-	"github.com/jeffwalsh/coinpayments"
 )
 
 func TestCallGetBasicInfo(t *testing.T) {
@@ -16,7 +14,6 @@ func TestCallGetBasicInfo(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not call get basic info: %s", err.Error())
 	}
-
 }
 
 func TestCallRates(t *testing.T) {
@@ -25,10 +22,9 @@ func TestCallRates(t *testing.T) {
 		t.Fatalf("Should have instantiated a new client with valid config and http client, but it threw error: %s", err.Error())
 	}
 
-	_, err = client.CallRates(&coinpayments.RatesRequest{Short: "1", Accepted: "0"})
+	_, err = client.CallRates(&RatesRequest{Short: "1", Accepted: "0"})
 
 	if err != nil {
 		t.Fatalf("Could not call get basic info: %s", err.Error())
 	}
-
 }

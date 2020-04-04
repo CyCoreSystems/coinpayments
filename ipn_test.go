@@ -1,4 +1,4 @@
-package coinpayments_test
+package coinpayments
 
 import (
 	"testing"
